@@ -6,7 +6,7 @@ namespace Group4MidTermLibraryProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
