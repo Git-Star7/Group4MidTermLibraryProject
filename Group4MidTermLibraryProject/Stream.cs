@@ -8,9 +8,9 @@ namespace Group4MidTermLibraryProject
     class Stream
     {
 
-        public static List<Book> MakeBookList()
+        public static List<Media> MakeBookList()
         {
-            List<Book> newBookList = new List<Book>();
+            List<Media> newBookList = new List<Media>();
 
             StreamReader reader = new StreamReader("../../../Books.txt");
             string line = reader.ReadLine();
@@ -18,7 +18,7 @@ namespace Group4MidTermLibraryProject
             while (line != null)
             {
                 string[] slot = line.Split('|');
-                newBookList.Add(new Book(slot[0], slot[1], DateTime.Parse(slot[2]), slot[3]));
+                newBookList.Add((Media)new Book(slot[0], slot[1], DateTime.Parse(slot[2]), slot[3]));
                 line = reader.ReadLine();
             }
             reader.Close();
