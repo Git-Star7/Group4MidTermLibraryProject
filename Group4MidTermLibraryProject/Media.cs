@@ -5,42 +5,55 @@ using System.Text;
 namespace Group4MidTermLibraryProject
 {
     abstract class Media
-    { 
+    {
         //properties
-       
+
         public string Title { get; set; }
-        public string MediaType { get; set; }
+        public string Author { get; set; }
         public DateTime DueDate { get; set; }
         public string Status { get; set; }
 
-       
-        public static void PrintList(List<Media> print)
+
+        
+        //methods
+        public void DisplayAllMedia(List<Media> book)
         {
-
-            for (int i = 0; i < print.Count; i++)
+            for (int i = 0; i < book.Count; i++)
             {
-               
                 Console.WriteLine();
-                Console.WriteLine($"\t{print[i].Title}");
-                Console.WriteLine($"\t{print[i].MediaType}");
-                Console.WriteLine($"\t{print[i].DueDate}");
-                Console.WriteLine($"{print[i].Status}");
+                Console.WriteLine($"\t{book[i].Title}");
+                Console.WriteLine($"\t{book[i].Author}");
+                Console.WriteLine($"\t{book[i].DueDate}");
+                Console.WriteLine($"\t{book[i].Status}");
                 Console.WriteLine();
-
             }
         }
-
-        public static string GetUserInput(string message)
+        public void PrintMediaByTitle(List<Book> booksList, string partialTitle) //print movies by category selected with string (unused)
         {
-            Console.WriteLine(message);
-            string input = Console.ReadLine();
-            return input;
+            List<Book> listOfBooksOfThatTitle = new List<Book>();
+            int num = 0;
+            for (int i = 0; i < booksList.Count; i++)
+            {
+                if (booksList[i].Title.Contains(partialTitle))
+                {
+                    listOfBooksOfThatTitle.Add(booksList[i]);
+                }
+            }
+            listOfBooksOfThatTitle.Sort();
+            foreach (Book book in listOfBooksOfThatTitle)
+            {
+                num++;
+                Console.WriteLine($"{book.Title}");
+            }
         }
-        //methods
-        public abstract void DisplayAllMedia();
-        public abstract void DisplayMediaByTitle();
-        public abstract void SelectMediaToCheckout();
-        public abstract void ReturnMedia();
+        public void SelectMediaToCheckout()
+        {
+
+        }
+        public void ReturnMedia()
+        {
+            Status = "On Shelf";
+        }
     }
 
    
