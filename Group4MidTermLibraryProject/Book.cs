@@ -15,7 +15,31 @@ namespace Group4MidTermLibraryProject
             Author = author;
         }
 
+        public void DisplayBookByAuthor()
+        {
+
+        }
+        public override void DisplayAllMedia()
+        {
+
+        }
+
+        public override void DisplayMediaByTitle()
+        {
+            
+        }
+
+        public override void SelectMediaToCheckout()
+        {
+            
+        }
+
+        public override void ReturnMedia()
+        {
+            Status = "On Shelf";
+        }
+
         //methods
-        
+
     }
 }
