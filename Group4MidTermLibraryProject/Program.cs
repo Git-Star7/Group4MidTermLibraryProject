@@ -7,9 +7,9 @@ namespace Group4MidTermLibraryProject
     {
         static void Main(string[] args)
         {
-            List<Book> bookList = new List<Book>(Stream.MakeBookList());
-            
+            List<Media> bookList = new List<Media>(Stream.MakeBookList());
 
+           // Media.DisplayAll(bookList);
             while (true)
             {
                 Console.WriteLine("Wecome to the Grand Circus library.");
@@ -31,8 +31,6 @@ namespace Group4MidTermLibraryProject
                         break;
                 }
             }
-
-
         }
     }
 }

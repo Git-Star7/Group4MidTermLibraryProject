@@ -7,8 +7,7 @@ namespace Group4MidTermLibraryProject
     class Book : Media
     {
         //fields+properties
-
-
+        
         //constructors
         public Book(string title, string author, DateTime dueDate, string status)
         {
@@ -16,22 +15,19 @@ namespace Group4MidTermLibraryProject
             Author = author;
             DueDate = dueDate;
             Status = status;
+            MediaType = "book";
         }
 
         //methods
-        public static void DisplayAll(List<Book> book)
+        public static void DisplayAll(List<Media> books)
         {
             
-            for (int i = 0; i < book.Count; i++)
+            foreach(Media book in books)
             {
-                Console.WriteLine();
-                Console.WriteLine($"\t{book[i].Title}");
-                Console.WriteLine($"\t{book[i].Author}");
-                Console.WriteLine($"\t{book[i].DueDate}");
-                Console.WriteLine($"\t{book[i].Status}");
+                book.DisplayContent();
             }
         }
-        public static void PrintByTitle(List<Book> booksList)
+        public static void PrintByTitle(List<Media> booksList)
         {
 
             bool nothing = true;
@@ -56,7 +52,7 @@ namespace Group4MidTermLibraryProject
             while (nothing);
 
         }
-        public static void PrintByAuthor(List<Book> booksList)
+        public static void PrintByAuthor(List<Media> booksList)
         {
 
             bool nothing = true;
@@ -81,30 +77,34 @@ namespace Group4MidTermLibraryProject
             while (nothing);
 
         }
-        public static void SelectToCheckout(List<Book> booksList)
+        public static void SelectToCheckout(List<Media> booksList, string title)
         {
-            bool nothing = true;
-            do
+            for (int i = 0; i < booksList.Count; i++)
             {
-                string title = Validation.GetUserInput("Select a book to checkout.");
-                for (int i = 0; i < booksList.Count; i++)
+                if (title == booksList[i].Title)
                 {
-                    if (title == booksList[i].Title)
+                    if (booksList[i].Status == "Checked Out")
                     {
-                        if (booksList[i].Status == "Checked Out")
-                        {
-                            Console.WriteLine("Sorry, this book is checked out.");
-                        }
-                        else
-                        {
-                            booksList[i].Status = "Checked Out";
-                            booksList[i].DueDate = DateTime.Now.AddDays(14);
-                            break;
-                        }
+                        Console.WriteLine("Sorry, this book is checked out.");
+                    }
+                    else
+                    {
+                        booksList[i].Status = "Checked Out";
+                        booksList[i].DueDate = DateTime.Now.AddDays(14);
+                        break;
                     }
                 }
             }
-            while (nothing);
+
+        }
+
+        public override void DisplayContent()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"\t{Title}");
+            Console.WriteLine($"\t{Author}");
+            Console.WriteLine($"\t{DueDate}");
+            Console.WriteLine($"\t{Status}");
         }
     }
 }

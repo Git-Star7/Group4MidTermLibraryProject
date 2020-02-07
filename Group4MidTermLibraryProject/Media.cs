@@ -12,10 +12,14 @@ namespace Group4MidTermLibraryProject
         public string Author { get; set; }
         public DateTime DueDate { get; set; }
         public string Status { get; set; }
+        public string MediaType { get; set; }
 
+        public abstract void DisplayContent();
 
 
         //methods
+
+        //public static abstract void PrintByTitle(List<Media> booksList);
 
         public static void DisplayAll(List<Media> book)
         {
@@ -31,7 +35,7 @@ namespace Group4MidTermLibraryProject
         }
 
 
-        public void ReturnMedia(List<Book> booksList, string title)
+        public void ReturnMedia(List<Media> booksList, string title)
         {
             for (int i = 0; i < booksList.Count; i++)
             {
