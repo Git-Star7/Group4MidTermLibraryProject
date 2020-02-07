@@ -14,9 +14,10 @@ namespace Group4MidTermLibraryProject
         public string Status { get; set; }
 
 
-        
+
         //methods
-        public static void DisplayAllMedia(List<Media> book)
+
+        public static void DisplayAll(List<Media> book)
         {
             for (int i = 0; i < book.Count; i++)
             {
