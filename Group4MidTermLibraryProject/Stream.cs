@@ -25,5 +25,23 @@ namespace Group4MidTermLibraryProject
             return newBookList;
 
         }
+
+        public static List<Movies> MakeMovieList()
+        {
+            List<Movies> newMovieList = new List<Movies>();
+
+            StreamReader reader = new StreamReader("../../../Movies.txt");
+            string line = reader.ReadLine();
+
+            while (line != null)
+            {
+                string[] slot = line.Split('|');
+                newMovieList.Add(new Movies(slot[0], slot[1], DateTime.Parse(slot[2]), slot[3]));
+                line = reader.ReadLine();
+            }
+            reader.Close();
+            return newMovieList;
+
+        }
     }
 }
