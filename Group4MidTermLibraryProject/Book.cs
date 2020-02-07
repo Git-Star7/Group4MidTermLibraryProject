@@ -15,6 +15,14 @@ namespace Group4MidTermLibraryProject
             Author = author;
         }
 
+        public Book(string title, string author, DateTime dueDate, string status)
+        {
+            Title = title;
+            Author = author;
+            DueDate = dueDate;
+            Status = status;
+        }
+
         public void DisplayBookByAuthor()
         {
 
