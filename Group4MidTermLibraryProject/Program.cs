@@ -7,13 +7,16 @@ namespace Group4MidTermLibraryProject
     {
         static void Main(string[] args)
         {
-
-        }
-        public static string GetUserInput(string message)
-        {
-            Console.WriteLine(message);
-            string input = Console.ReadLine();
-            return input;
+            Console.WriteLine("Wecome to the Grand Circus library.");
+            double media = Validation.GetUserNumber("please select the type of media you would like to check out.");
+            switch (media)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+            }
+            Book.DisplayAll();
         }
     }
 }
