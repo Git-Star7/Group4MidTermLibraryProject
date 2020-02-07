@@ -11,7 +11,6 @@ namespace Group4MidTermLibraryProject
         public static List<Book> MakeBookList()
         {
             List<Book> newBookList = new List<Book>();
-
             StreamReader reader = new StreamReader("../../../Books.txt");
             string line = reader.ReadLine();
 
@@ -23,7 +22,15 @@ namespace Group4MidTermLibraryProject
             }
             reader.Close();
             return newBookList;
-
+        }
+        public static void SetNewBookList(List<Book> list)
+        {
+            StreamWriter writer = new StreamWriter("../../../MovieCharacters.txt");
+            foreach (Book slot in list)
+            {
+                writer.WriteLine($"{slot.Title}|{slot.Author}|{slot.DueDate}|{slot.Status}");
+            }
+            writer.Close();
         }
     }
 }

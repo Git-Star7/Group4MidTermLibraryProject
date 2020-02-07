@@ -26,7 +26,8 @@ namespace Group4MidTermLibraryProject
                         Book.PrintByTitle(bookList);
                         break;
                     case 4:
-                        Book.SelectToCheckout(bookList, "Harry Potter and the Philosopher's Stone");
+                        Book.SelectToCheckout(bookList);
+                        Stream.SetNewBookList(bookList);
                         break;
                 }
             }

@@ -81,25 +81,30 @@ namespace Group4MidTermLibraryProject
             while (nothing);
 
         }
-        public static void SelectToCheckout(List<Book> booksList, string title)
+        public static void SelectToCheckout(List<Book> booksList)
         {
-            for (int i = 0; i < booksList.Count; i++)
+            bool nothing = true;
+            do
             {
-                if (title == booksList[i].Title)
+                string title = Validation.GetUserInput("Select a book to checkout.");
+                for (int i = 0; i < booksList.Count; i++)
                 {
-                    if (booksList[i].Status == "Checked Out")
+                    if (title == booksList[i].Title)
                     {
-                        Console.WriteLine("Sorry, this book is checked out.");
-                    }
-                    else
-                    {
-                        booksList[i].Status = "Checked Out";
-                        booksList[i].DueDate = DateTime.Now.AddDays(14);
-                        break;
+                        if (booksList[i].Status == "Checked Out")
+                        {
+                            Console.WriteLine("Sorry, this book is checked out.");
+                        }
+                        else
+                        {
+                            booksList[i].Status = "Checked Out";
+                            booksList[i].DueDate = DateTime.Now.AddDays(14);
+                            break;
+                        }
                     }
                 }
             }
-
+            while (nothing);
         }
     }
 }
