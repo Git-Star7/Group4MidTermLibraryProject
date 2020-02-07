@@ -29,42 +29,8 @@ namespace Group4MidTermLibraryProject
                 Console.WriteLine();
             }
         }
-        public static void PrintMediaByTitle(List<Book> booksList, string partialTitle)
-        {
-            List<Book> listOfBooksOfThatTitle = new List<Book>();
-            int num = 0;
-            for (int i = 0; i < booksList.Count; i++)
-            {
-                if (booksList[i].Title.Contains(partialTitle))
-                {
-                    listOfBooksOfThatTitle.Add(booksList[i]);
-                }
-            }
-            listOfBooksOfThatTitle.Sort();
-            foreach (Book book in listOfBooksOfThatTitle)
-            {
-                num++;
-                Console.WriteLine($"{book.Title}");
-            }
-        }
-        public static void SelectMediaToCheckout(List<Book> booksList, string title)
-        {
-            for (int i = 0; i < booksList.Count; i++)
-            {
-                if (title == booksList[i].Title)
-                {
-                    if (booksList[i].Status == "Checked Out")
-                    {
-                        Console.WriteLine("Sorry, this book is checked out.");
-                    }
-                    else
-                    {
-                        booksList[i].Status = "Checked Out";
-                        booksList[i].DueDate = DateTime.Now.AddDays(14);
-                    }
-                }
-            }
-        }
+
+
         public void ReturnMedia(List<Book> booksList, string title)
         {
             for (int i = 0; i < booksList.Count; i++)
@@ -77,9 +43,4 @@ namespace Group4MidTermLibraryProject
             }
         }
     }
-
-   
-  
-
-  
 }

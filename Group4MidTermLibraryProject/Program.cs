@@ -7,16 +7,31 @@ namespace Group4MidTermLibraryProject
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Wecome to the Grand Circus library.");
-            double media = Validation.GetUserNumber("please select the type of media you would like to check out.");
-            switch (media)
+            List<Book> bookList = new List<Book>(Stream.MakeBookList());
+            
+
+            while (true)
             {
-                case 1:
-                    break;
-                case 2:
-                    break;
+                Console.WriteLine("Wecome to the Grand Circus library.");
+                double bookmenu = Validation.GetUserNumber("please select the type of media you would like to check out.");
+                switch (bookmenu)
+                {
+                    case 1:
+                        Book.DisplayAll(bookList);
+                        break;
+                    case 2:
+                        Book.PrintByAuthor(bookList);
+                        break;
+                    case 3:
+                        Book.PrintByTitle(bookList);
+                        break;
+                    case 4:
+                        Book.SelectToCheckout(bookList, "Harry Potter and the Philosopher's Stone");
+                        break;
+                }
             }
-            Book.DisplayAll();
+
+
         }
     }
 }
