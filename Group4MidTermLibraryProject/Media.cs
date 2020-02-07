@@ -9,8 +9,7 @@ namespace Group4MidTermLibraryProject
         //properties
        
         public string Title { get; set; }
-
-        public string Author { get; set; }
+        public string MediaType { get; set; }
         public DateTime DueDate { get; set; }
         public string Status { get; set; }
 
@@ -23,7 +22,7 @@ namespace Group4MidTermLibraryProject
                
                 Console.WriteLine();
                 Console.WriteLine($"\t{print[i].Title}");
-                Console.WriteLine($"\t{print[i].Author}");
+                Console.WriteLine($"\t{print[i].MediaType}");
                 Console.WriteLine($"\t{print[i].DueDate}");
                 Console.WriteLine($"{print[i].Status}");
                 Console.WriteLine();
@@ -37,7 +36,11 @@ namespace Group4MidTermLibraryProject
             string input = Console.ReadLine();
             return input;
         }
-
+        //methods
+        public abstract void DisplayAllMedia();
+        public abstract void DisplayMediaByTitle();
+        public abstract void SelectMediaToCheckout();
+        public abstract void ReturnMedia();
     }
 
    
