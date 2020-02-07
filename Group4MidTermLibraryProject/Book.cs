@@ -18,7 +18,6 @@ namespace Group4MidTermLibraryProject
             Status = status;
         }
 
-
         //methods
 
     }
