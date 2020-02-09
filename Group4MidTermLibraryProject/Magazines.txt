@@ -1,0 +1,15 @@
+﻿Vogue|Fashion|2/16/2020|Checked Out
+National Enquirer|Tabloid|2/8/2020|On Shelf
+Time|News|2/8/2020|On Shelf
+Popular Mechanics|Trade|2/18/2020|Checked Out
+GQ|Men's Lifestyle|2/18/2020|Checked Out
+National Geographic|Nature|2/8/2020|On Shelf
+Cosmopolitan|Women's Lifestyle|2/11/2020|Checked Out
+Sports Illustrated|Sports|2/8/2020|On Shelf
+PC Gamer|Entertainment|2/14/2020|Checked Out
+Entertainment Weekly|Entertainment|2/11/2020|Checked Out
+Rolling Stone|Entertainment|2/8/2020|On Shelf
+People|Entertainment|2/12/2020|Checked Out
+Men's Health|Men's Lifestyle|2/9/2020|On Shelf
+Good Housekeeping|Lifestyle|2/9/2020/On Shelf
+Bon Appetit|Food|2/15/2020|Checked Out
