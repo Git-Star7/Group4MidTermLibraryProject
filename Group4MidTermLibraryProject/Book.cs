@@ -19,22 +19,14 @@ namespace Group4MidTermLibraryProject
         }
 
         //methods
-        public static void DisplayAll(List<Media> books)
-        {
-            
-            foreach(Media book in books)
-            {
-                book.DisplayContent();
-            }
-        }
+        
         public static void PrintByTitle(List<Media> booksList)
         {
-
             bool nothing = true;
             do
             {
 
-                string partialTitle = Validation.GetUserInput("select a book");
+                string partialTitle = Validation.GetUserInput("Select a title");
                 for (int i = 0; i < booksList.Count; i++)
                 {
                     if (booksList[i].Title.Contains(partialTitle))
@@ -42,7 +34,6 @@ namespace Group4MidTermLibraryProject
                         Console.WriteLine(booksList[i].Title);
                         nothing = false;
                     }
-
                 }
                 if (nothing)
                 {
@@ -50,7 +41,6 @@ namespace Group4MidTermLibraryProject
                 }
             }
             while (nothing);
-
         }
         public static void PrintByAuthor(List<Media> booksList)
         {
@@ -59,7 +49,7 @@ namespace Group4MidTermLibraryProject
             do
             {
 
-                string partialTitle = Validation.GetUserInput("select a book");
+                string partialTitle = Validation.GetUserInput("Select an author");
                 for (int i = 0; i < booksList.Count; i++)
                 {
                     if (booksList[i].Author.Contains(partialTitle))
@@ -77,27 +67,37 @@ namespace Group4MidTermLibraryProject
             while (nothing);
 
         }
-        public static void SelectToCheckout(List<Media> booksList, string title)
+        public static void SelectToCheckout(List<Media> booksList)
         {
-            for (int i = 0; i < booksList.Count; i++)
+            Console.WriteLine("Choose a book");
+            bool validInput = false;
+            while (!validInput)
             {
-                if (title == booksList[i].Title)
+                string title = Console.ReadLine();
+                for (int i = 0; i < booksList.Count; i++)
                 {
-                    if (booksList[i].Status == "Checked Out")
+                    if (title == booksList[i].Title)
                     {
-                        Console.WriteLine("Sorry, this book is checked out.");
-                    }
-                    else
-                    {
-                        booksList[i].Status = "Checked Out";
-                        booksList[i].DueDate = DateTime.Now.AddDays(14);
-                        break;
+                        if (booksList[i].Status == "Checked Out")
+                        {
+                            Console.WriteLine("Sorry, this book is checked out.");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"This book is now checked out and due back in 14 days on {DateTime.Now.AddDays(14)}");
+                            booksList[i].Status = "Checked Out";
+                            booksList[i].DueDate = DateTime.Now.AddDays(14);
+                        }
+                        validInput = true;
                     }
                 }
+                if (validInput == true)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input, please select another title");
             }
-
         }
-
         public override void DisplayContent()
         {
             Console.WriteLine();
@@ -105,6 +105,13 @@ namespace Group4MidTermLibraryProject
             Console.WriteLine($"\t{Author}");
             Console.WriteLine($"\t{DueDate}");
             Console.WriteLine($"\t{Status}");
+        }
+        public static void DisplayAll(List<Media> books)
+        {
+            foreach (Media book in books)
+            {
+                book.DisplayContent();
+            }
         }
     }
 }

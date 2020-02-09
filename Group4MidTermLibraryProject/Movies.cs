@@ -6,6 +6,7 @@ namespace Group4MidTermLibraryProject
 {
     class Movies : Media
     {
+        
         public string Genre { get; set; }
         public Movies(string title, string genre, DateTime dueDate, string status)
         {
@@ -16,18 +17,6 @@ namespace Group4MidTermLibraryProject
         }
 
         //methods
-        public static void DisplayAll(List<Movies> movie)
-        {
-
-            for (int i = 0; i < movie.Count; i++)
-            {
-                Console.WriteLine();
-                Console.WriteLine($"\t{movie[i].Title}");
-                Console.WriteLine($"\t{movie[i].Genre}");
-                Console.WriteLine($"\t{movie[i].DueDate}");
-                Console.WriteLine($"\t{movie[i].Status}");
-            }
-        }
         public static void PrintByTitle(List<Movies> movieList)
         {
 
@@ -98,6 +87,20 @@ namespace Group4MidTermLibraryProject
             }
 
         }
+        public override void DisplayContent()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"\t{Title}");
+            Console.WriteLine($"\t{Author}");
+            Console.WriteLine($"\t{DueDate}");
+            Console.WriteLine($"\t{Status}");
+        }
+        public static void DisplayAll(List<Media> books)
+        {
+            foreach (Media book in books)
+            {
+                book.DisplayContent();
+            }
+        }
     }
-
 }

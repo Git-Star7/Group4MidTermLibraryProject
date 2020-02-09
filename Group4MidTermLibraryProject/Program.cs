@@ -8,12 +8,15 @@ namespace Group4MidTermLibraryProject
         static void Main(string[] args)
         {
             List<Media> bookList = new List<Media>(Stream.MakeBookList());
+            Console.WriteLine("Wecome to the Grand Circus library.");
 
-           // Media.DisplayAll(bookList);
-            while (true)
+            bool continueLoop = true;
+            while (continueLoop == true)
             {
-                Console.WriteLine("Wecome to the Grand Circus library.");
-                double bookmenu = Validation.GetUserNumber("please select the type of media you would like to check out.");
+                Console.WriteLine(" 1: Display all books\n 2: Search books by Author\n 3: Search books by title\n 4: Select a book to chechout\n");
+
+                double bookmenu = Validation.GetUserNumber("please select an option from the menu.");
+                
                 switch (bookmenu)
                 {
                     case 1:
@@ -27,9 +30,11 @@ namespace Group4MidTermLibraryProject
                         break;
                     case 4:
                         Book.SelectToCheckout(bookList);
-                        Stream.SetNewBookList(bookList);
+                        //Stream.SetNewBookList(bookList);
                         break;
                 }
+
+                Validation.AskUserContinue("Would you like to continue? y/n ", "y", "n");
             }
         }
     }
