@@ -14,6 +14,7 @@ namespace Group4MidTermLibraryProject
             Genre = genre;
             DueDate = dueDate;
             Status = status;
+            MediaType = "movie";
         }
 
         //methods
@@ -42,7 +43,7 @@ namespace Group4MidTermLibraryProject
             while (nothing);
 
         }
-        public static void PrintByAuthor(List<Movies> movieList)
+        /*public static void PrintByAuthor(List<Movies> movieList)
         {
 
             bool nothing = true;
@@ -66,7 +67,7 @@ namespace Group4MidTermLibraryProject
             }
             while (nothing);
 
-        }
+        }*/
         public static void SelectToCheckout(List<Movies> movieList, string title)
         {
             for (int i = 0; i < movieList.Count; i++)
