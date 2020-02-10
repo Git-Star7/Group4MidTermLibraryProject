@@ -26,7 +26,7 @@ namespace Group4MidTermLibraryProject
         }
         public static void SetNewBookList(List<Book> list)
         {
-            StreamWriter writer = new StreamWriter("../../../MovieCharacters.txt");
+            StreamWriter writer = new StreamWriter("../../../Books.txt");
             foreach (Book slot in list)
             {
                 writer.WriteLine($"{slot.Title}|{slot.Author}|{slot.DueDate}|{slot.Status}");
