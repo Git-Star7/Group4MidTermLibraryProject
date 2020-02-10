@@ -26,9 +26,18 @@ namespace Group4MidTermLibraryProject
                 if (media is Movies)
                 {
                     Movies movie = (Movies)media;
-                    Console.WriteLine();
-                    Console.WriteLine($"Title:\t{movie.Title}");
-                    Console.WriteLine($"Genre:\t{movie.Genre}\t\tDue Back:\t{movie.DueDate.ToShortDateString()}\t\tShelf Status:\t{movie.Status}");
+                    if (movie.Status == "Checked Out")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Title:\t{movie.Title}");
+                        Console.WriteLine($"Genre:\t{movie.Genre}\t\tShelf Status:\t{movie.Status}");
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Title:\t{movie.Title}");
+                        Console.WriteLine($"Genre:\t{movie.Genre}\t\tShelf Status:\t{movie.Status}\t\tDue Back:\t{movie.DueDate.ToShortDateString()}");
+                    }
                 }
             }
         }

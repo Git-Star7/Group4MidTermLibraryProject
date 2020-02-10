@@ -21,9 +21,9 @@ namespace Group4MidTermLibraryProject
             Console.WriteLine("Wecome to the Grand Circus library.");
 
             bool continueLoop = true;
-            while (continueLoop == true)
+            while (continueLoop)
             {
-                Console.WriteLine(" 1: Display all media\n 2: Search items by author or genre\n 3: Search books by title\n 4: Select an item to checkout\n");
+                Console.WriteLine(" 1: Display all media\n 2: Search items by author or genre\n 3: Search books by title\n 4: Select an item to checkout\n 5: Return item\n 6: Exit\n");
 
                 double bookmenu = Validation.GetUserNumber("Please select an option from the menu.");
                 
@@ -43,10 +43,15 @@ namespace Group4MidTermLibraryProject
                         Media.SelectToCheckout(mediaList);
                         Stream.SetNewList(mediaList);
                         break;
+                    case 5:
+                        Media.Return(mediaList);
+                        Stream.SetNewList(mediaList);
+                        break;
+                    case 6:
+                        continueLoop = false;
+                        break;
 
                 }
-
-                Validation.AskUserContinue("Would you like to continue? y/n ", "y", "n");
             }
         }
     }

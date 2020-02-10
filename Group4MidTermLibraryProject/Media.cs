@@ -115,6 +115,39 @@ namespace Group4MidTermLibraryProject
                 }
             }
         }
+        public static void Return(List<Media> mediaList)
+        {
+            Console.WriteLine("Choose an item.");
+            bool validInput = false;
+            while (!validInput)
+            {
+                string title = Console.ReadLine();
+                for (int i = 0; i < mediaList.Count; i++)
+                {
+                    if (title == mediaList[i].Title)
+                    {
+                        if (mediaList[i].Status == "Checked Out")
+                        {
+                            Console.WriteLine("Thank you for returning your item.");
+                            mediaList[i].Status = "On shelf";
+                            mediaList[i].DueDate = DateTime.Now;
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("This item is already on returned and on the shelf.");
+                            
+                        }
+                        validInput = true;
+                    }
+                }
+                if (validInput == true)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input, please select another title");
+            }
+        }
 
     }
 }

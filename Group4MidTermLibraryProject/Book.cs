@@ -29,9 +29,18 @@ namespace Group4MidTermLibraryProject
                 if(book is Book)
                 {
                     Book book2 = (Book)book;
-                    Console.WriteLine();
-                    Console.WriteLine($"Title:\t{book2.Title}");
-                    Console.WriteLine($"Author:\t{book2.Author}\t\tDue Back:\t{book2.DueDate.ToShortDateString()}\t\tShelf Status:\t{book2.Status}");
+                    if (book2.Status == "Checked Out")
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Title:\t{book2.Title}");
+                        Console.WriteLine($"Author:\t{book2.Author}\t\tShelf Status:\t{book2.Status}");
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine($"Title:\t{book2.Title}");
+                        Console.WriteLine($"Author:\t{book2.Author}\t\tShelf Status:\t{book2.Status}\t\tDue Back:\t{book2.DueDate.ToShortDateString()}");
+                    }
                 }
             }
         }
