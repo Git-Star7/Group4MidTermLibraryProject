@@ -101,10 +101,8 @@ namespace Group4MidTermLibraryProject
         public override void DisplayContent()
         {
             Console.WriteLine();
-            Console.WriteLine($"\t{Title}");
-            Console.WriteLine($"\t{Author}");
-            Console.WriteLine($"\t{DueDate}");
-            Console.WriteLine($"\t{Status}");
+            Console.WriteLine($"Title:\t{Title}");
+            Console.WriteLine($"Author:\t{Author}\t\tDue Back:\t{DueDate.ToShortDateString()}\t\tShelf Status:\t{Status}");
         }
         public static void DisplayAll(List<Media> books)
         {
