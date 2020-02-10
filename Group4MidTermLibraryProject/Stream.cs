@@ -51,5 +51,14 @@ namespace Group4MidTermLibraryProject
             return newMovieList;
 
         }
+        public static void SetNewMovieList(List<Movies> list)
+        {
+            StreamWriter writer = new StreamWriter("../../../Movies.txt");
+            foreach (Movies slot in list)
+            {
+                writer.WriteLine($"{slot.Title}|{slot.Genre}|{slot.DueDate}|{slot.Status}");
+            }
+            writer.Close();
+        }
     }
 }
