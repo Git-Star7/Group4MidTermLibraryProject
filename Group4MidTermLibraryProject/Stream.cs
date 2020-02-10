@@ -26,7 +26,7 @@ namespace Group4MidTermLibraryProject
         }
         public static void SetNewBookList(List<Book> list)
         {
-            StreamWriter writer = new StreamWriter("../../../MovieCharacters.txt");
+            StreamWriter writer = new StreamWriter("../../../Books.txt");
             foreach (Book slot in list)
             {
                 writer.WriteLine($"{slot.Title}|{slot.Author}|{slot.DueDate}|{slot.Status}");
@@ -50,6 +50,15 @@ namespace Group4MidTermLibraryProject
             reader.Close();
             return newMovieList;
 
+        }
+        public static void SetNewMovieList(List<Movies> list)
+        {
+            StreamWriter writer = new StreamWriter("../../../Movies.txt");
+            foreach (Movies slot in list)
+            {
+                writer.WriteLine($"{slot.Title}|{slot.Genre}|{slot.DueDate}|{slot.Status}");
+            }
+            writer.Close();
         }
     }
 }
