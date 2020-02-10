@@ -49,6 +49,7 @@ namespace Group4MidTermLibraryProject
                         break;
                     case 6:
                         continueLoop = false;
+                        Stream.SetNewList(mediaList);
                         break;
 
                 }

@@ -29,7 +29,7 @@ namespace Group4MidTermLibraryProject
                 if(book is Book)
                 {
                     Book book2 = (Book)book;
-                    if (book2.Status == "Checked Out")
+                    if (book2.Status == "On Shelf")
                     {
                         Console.WriteLine();
                         Console.WriteLine($"Title:\t{book2.Title}");

@@ -26,7 +26,7 @@ namespace Group4MidTermLibraryProject
                 if (media is Movies)
                 {
                     Movies movie = (Movies)media;
-                    if (movie.Status == "Checked Out")
+                    if (movie.Status == "On Shelf")
                     {
                         Console.WriteLine();
                         Console.WriteLine($"Title:\t{movie.Title}");
