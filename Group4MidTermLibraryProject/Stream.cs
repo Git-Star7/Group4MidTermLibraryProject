@@ -24,14 +24,25 @@ namespace Group4MidTermLibraryProject
             reader.Close();
             return newBookList;
         }
-        public static void SetNewBookList(List<Book> list)
+        public static void SetNewList(List<Media> list)
         {
-            StreamWriter writer = new StreamWriter("../../../Books.txt");
-            foreach (Book slot in list)
+            StreamWriter bookWriter = new StreamWriter("../../../Books.txt");
+            StreamWriter movieWriter = new StreamWriter("../../../Movies.txt");
+            foreach (Media slot in list)
             {
-                writer.WriteLine($"{slot.Title}|{slot.Author}|{slot.DueDate}|{slot.Status}");
+                if (slot is Book)
+                {
+                    Book book = (Book)slot;
+                    bookWriter.WriteLine($"{book.Title}|{book.Author}|{book.DueDate}|{book.Status}");
+                }
+                if (slot is Movies)
+                {
+                    Movies movie = (Movies)slot;
+                    movieWriter.WriteLine($"{movie.Title}|{movie.Genre}|{movie.DueDate}|{movie.Status}");
+                }
             }
-            writer.Close();
+            bookWriter.Close();
+            movieWriter.Close();
         }
 
         public static List<Movies> MakeMovieList()
@@ -50,15 +61,6 @@ namespace Group4MidTermLibraryProject
             reader.Close();
             return newMovieList;
 
-        }
-        public static void SetNewMovieList(List<Movies> list)
-        {
-            StreamWriter writer = new StreamWriter("../../../Movies.txt");
-            foreach (Movies slot in list)
-            {
-                writer.WriteLine($"{slot.Title}|{slot.Genre}|{slot.DueDate}|{slot.Status}");
-            }
-            writer.Close();
         }
     }
 }

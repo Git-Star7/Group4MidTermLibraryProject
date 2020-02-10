@@ -7,7 +7,12 @@ namespace Group4MidTermLibraryProject
     class Book : Media
     {
         //fields+properties
-        
+        public string Author { get; set; }
+
+        public Book()
+        {
+
+        }
         //constructors
         public Book(string title, string author, DateTime dueDate, string status)
         {
@@ -17,98 +22,17 @@ namespace Group4MidTermLibraryProject
             Status = status;
             MediaType = "book";
         }
-
-        //methods
-        
-        public static void PrintByTitle(List<Media> booksList)
-        {
-            bool nothing = true;
-            do
-            {
-
-                string partialTitle = Validation.GetUserInput("Select a title");
-                for (int i = 0; i < booksList.Count; i++)
-                {
-                    if (booksList[i].Title.Contains(partialTitle))
-                    {
-                        Console.WriteLine(booksList[i].Title);
-                        nothing = false;
-                    }
-                }
-                if (nothing)
-                {
-                    Console.WriteLine("We do not contain that book");
-                }
-            }
-            while (nothing);
-        }
-        public static void PrintByAuthor(List<Media> booksList)
-        {
-
-            bool nothing = true;
-            do
-            {
-
-                string partialTitle = Validation.GetUserInput("Select an author");
-                for (int i = 0; i < booksList.Count; i++)
-                {
-                    if (booksList[i].Author.Contains(partialTitle))
-                    {
-                        Console.WriteLine(booksList[i].Title);
-                        nothing = false;
-                    }
-
-                }
-                if (nothing)
-                {
-                    Console.WriteLine("We do not contain that book");
-                }
-            }
-            while (nothing);
-
-        }
-        public static void SelectToCheckout(List<Media> booksList)
-        {
-            Console.WriteLine("Choose a book");
-            bool validInput = false;
-            while (!validInput)
-            {
-                string title = Console.ReadLine();
-                for (int i = 0; i < booksList.Count; i++)
-                {
-                    if (title == booksList[i].Title)
-                    {
-                        if (booksList[i].Status == "Checked Out")
-                        {
-                            Console.WriteLine("Sorry, this book is checked out.");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"This book is now checked out and due back in 14 days on {DateTime.Now.AddDays(14)}");
-                            booksList[i].Status = "Checked Out";
-                            booksList[i].DueDate = DateTime.Now.AddDays(14);
-                        }
-                        validInput = true;
-                    }
-                }
-                if (validInput == true)
-                {
-                    break;
-                }
-                Console.WriteLine("Invalid input, please select another title");
-            }
-        }
-        public override void DisplayContent()
-        {
-            Console.WriteLine();
-            Console.WriteLine($"Title:\t{Title}");
-            Console.WriteLine($"Author:\t{Author}\t\tDue Back:\t{DueDate.ToShortDateString()}\t\tShelf Status:\t{Status}");
-        }
         public static void DisplayAll(List<Media> books)
         {
             foreach (Media book in books)
             {
-                book.DisplayContent();
+                if(book is Book)
+                {
+                    Book book2 = (Book)book;
+                    Console.WriteLine();
+                    Console.WriteLine($"Title:\t{book2.Title}");
+                    Console.WriteLine($"Author:\t{book2.Author}\t\tDue Back:\t{book2.DueDate.ToShortDateString()}\t\tShelf Status:\t{book2.Status}");
+                }
             }
         }
     }

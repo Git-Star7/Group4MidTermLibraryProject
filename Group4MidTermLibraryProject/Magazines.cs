@@ -19,14 +19,14 @@ namespace Group4MidTermLibraryProject
         }
 
         //methods
-        public static void DisplayAll(List<Media> magazines)
+       /* public static void DisplayAll(List<Media> magazines)
         {
 
             foreach (Media mag in magazines)
             {
                 mag.DisplayContent();
             }
-        }
+        }*/
         public static void PrintByTitle(List<Media> magList)
         {
 
@@ -98,14 +98,14 @@ namespace Group4MidTermLibraryProject
 
         }
 
-        public override void DisplayContent()
+       /* public override void DisplayContent()
         {
             Console.WriteLine();
             Console.WriteLine($"\t{Title}");
             Console.WriteLine($"\t{Category}");
             Console.WriteLine($"\t{DueDate}");
             Console.WriteLine($"\t{Status}");
-        }
+        }*/
        
     }
 }

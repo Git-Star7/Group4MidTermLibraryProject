@@ -1,15 +1,15 @@
-﻿Air Bud|Family|2/8/2020|On Shelf
-Old Yeller|Classic|2/8/2020|On Shelf
-Hook|Family|2/8/2020|On Shelf
-Casablanca|Classic|2/16/2020|Checked Out
-A Goofy Movie|Family|2/8/2020|On Shelf
-Raiders of the Lost Arc|Action|2/10/2020|Checked Out
-Top Gun|Action|2/8/2020|On Shelf
-Caddyshack|Comedy|2/8/2020|On Shelf
-Who Framed Roger Rabbit|Family|2/8/2020|On Shelf
-Coming to America|Comedy|2/12/2020|Checked Out
-The Karate Kid|Family|2/8/2020|On Shelf
-Robocop|Action|2/8/2020|On Shelf
-E.T.|Sci-Fi|2/12/2020|Checked Out
-Back to the Future|Adventure|2/8/2020|On Shelf
-Die Hard|Action|2/8/2020|On Shelf
+Air Bud|Family|2/8/2020 12:00:00 AM|On Shelf
+Old Yeller|Classic|2/8/2020 12:00:00 AM|On Shelf
+Hook|Family|2/8/2020 12:00:00 AM|On Shelf
+Casablanca|Classic|2/16/2020 12:00:00 AM|Checked Out
+A Goofy Movie|Family|2/8/2020 12:00:00 AM|On Shelf
+Raiders of the Lost Arc|Action|2/10/2020 12:00:00 AM|Checked Out
+Top Gun|Action|2/8/2020 12:00:00 AM|On Shelf
+Caddyshack|Comedy|2/8/2020 12:00:00 AM|On Shelf
+Who Framed Roger Rabbit|Family|2/8/2020 12:00:00 AM|On Shelf
+Coming to America|Comedy|2/12/2020 12:00:00 AM|Checked Out
+The Karate Kid|Family|2/8/2020 12:00:00 AM|On Shelf
+Robocop|Action|2/24/2020 2:50:27 PM|Checked Out
+E.T.|Sci-Fi|2/12/2020 12:00:00 AM|Checked Out
+Back to the Future|Adventure|2/8/2020 12:00:00 AM|On Shelf
+Die Hard|Action|2/8/2020 12:00:00 AM|On Shelf
